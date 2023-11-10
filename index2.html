@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora Simples</title>
+	<script>
+		function calcular() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			var operacao = document.getElementById("operacao").value;
+			var resultado;
+
+			if (operacao == "soma") {
+				resultado = num1 + num2;
+			} else if (operacao == "subtracao") {
+				resultado = num1 - num2;
+			} else if (operacao == "multiplicacao") {
+				resultado = num1 * num2;
+			} else if (operacao == "divisao") {
+				resultado = num1 / num2;
+			}
+
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+	</script>
+</head>
+<body>
+	<h1>Calculadora Simples</h1>
+	<form>
+		<label for="num1">Número 1:</label>
+		<input type="text" id="num1"><br>
+
+		<label for="num2">Número 2:</label>
+		<input type="text" id="num2"><br>
+
+		<label for="operacao">Operação:</label>
+		<select id="operacao">
+			<option value="soma">+</option>
+			<option value="subtracao">-</option>
+			<option value="multiplicacao">*</option>
+			<option value="divisao">/</option>
+		</select><br>
+
+		<button type="button" onclick="calcular()">Calcular</button>
+	</form>
+
+	<p>Resultado: <span id="resultado"></span></p>
+</body>
+</html>
+
+
